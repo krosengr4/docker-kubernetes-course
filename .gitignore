@@ -1,3 +1,12 @@
+# Docker
+*.dockerignore # If you have temporary or example .dockerignore files
+!Dockerfile # Ensure your actual Dockerfiles are tracked
+
+# Kubernetes
+*.kubeconfig # Ignore sensitive Kubernetes configuration files
+*.yaml.tmp # Ignore temporary generated Kubernetes manifests
+*.bak # Ignore backup files
+
 # Logs
 logs
 *.log
