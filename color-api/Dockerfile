@@ -13,5 +13,5 @@ RUN npm ci
 # Copy the source folder into source folder of our container
 COPY src src
 
-# Run the command to run the application
+# Run the command to run the application ["environment", "source code"]
 CMD ["npm", "start"]
