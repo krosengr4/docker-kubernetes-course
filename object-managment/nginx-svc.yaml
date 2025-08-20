@@ -1,0 +1,23 @@
+# Equivalent to the imperative command:
+# kubectl expose pod nginx-pod --type=NodePort --port=80
+
+# Define the API version
+apiVersion: v1
+# Define what kind of object or resource is being managed
+kind: Service
+# Define the data to identify the object
+metadata: 
+  name: nginx-svc 
+  labels:
+    app: nginx
+# Define the specifications for *how* the objects are being managed
+spec:
+  type: NodePort
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  # selector specifies the correct pods to route the requests to
+  selector: 
+    # This would be the labels that were specified in the pod(nginx-pod.yaml)
+    app: nginx
