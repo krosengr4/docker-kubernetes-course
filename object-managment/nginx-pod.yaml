@@ -1,0 +1,20 @@
+# Define the API Version
+apiVersion: v1
+# Define which object or resource is being managed
+kind: Pod
+# Define the data to identify  the object
+metadata:
+  # Name of the pod
+  name: nginx-pod
+  labels:
+    app: nginx
+  # Annotations field mainly used to define the behavior or how to manage
+  annotations:
+    description: "Nginx pod for learning purposes."
+# Define the actual configuration for the objects being managed
+spec: 
+  containers:
+  - image: nginx:1.27.0
+    name: nginx-container
+    ports:
+    - containerPort: 80
